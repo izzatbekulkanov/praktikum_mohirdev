@@ -1,0 +1,15 @@
+
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block content %}
+    <ul>
+        {% for news in projects %}
+    <li>
+        {{news.title}}
+    </li>
+    {% endfor %}
+    </ul>
+
+{% endblock content %}
+

@@ -1,25 +1,15 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import *
 
 # Create your views here.
 
-def index(request):
-    return render(request, 'base/index.html')
-def create(request):
-    return render(request, 'base/create.html')
-
-def update(request):
+def abouts(request):
+    projects = Project.objects.all()
     context = {
-        'title': 'Update',
-        'content': 'Sarlavha',
-        'id': 1,
-        'name': 'Update',
-        'email': '<EMAIL>',
-        'password': '<PASSWORD>',
-        'password2': '<PASSWORD>',
-        'gender': 'Male',
-        'age' : '<AGE>',
-        'city' : '<CITY>',
-        'country' : '<COUNTRY>',
+        'projects':projects
     }
-    return render(request, 'base/update.html', context)
+    return render(request, "news/abouts.html",context)
+
+def about(request,id):
+    return render(request, "news/about.html")

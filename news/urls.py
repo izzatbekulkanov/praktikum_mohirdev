@@ -4,7 +4,8 @@ from .views import *
 
 
 urlpatterns = [
-    path('news/',index),
-    path('create/', create),
+    path('news/', abouts, name='abouts'),
+    path('news/<uuid:id>', about, name='about'),
+    
 
 ]
