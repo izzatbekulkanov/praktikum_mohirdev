@@ -14,13 +14,13 @@
       </figcaption>
     </figure>
     <div class="row mx-auto p-1">
-        {% for reviewP in reviews_m %}
+        {% for good in reviews_p %}
            <div class="card mx-auto p-1 col-2 h-3" style="width: 18rem; ">
-               <img src="{{ i.project.image.url }}" class="card-img-top" alt="...">
+               <img src="{{ good.project.image.url }}" class="card-img-top" alt="...">
                <div class="card-body">
-                    <h5 class="card-title">{{ reviewP.project.title }}</h5>description
-                    <p class="card-text">{{ reviewP.project.description | truncatechars:15 }}</p>
-                    <p class="card-text">Creator {{ reviewP.project.creator.name  }}</p>
+                    <h5 class="card-title">{{ good.project.title }}</h5>description
+                    <p class="card-text">{{ good.project.description | truncatechars:15 }}</p>
+                    <p class="card-text">Creator {{ good.project.creator.name  }}</p>
                     <a href="#" class="btn btn-primary">More info</a>
                 </div>
             </div>
@@ -47,6 +47,26 @@
                   </div>
                 </div>
             {% endfor %}
+        <figure class="text-center mt-4">
+      <blockquote class="blockquote">
+        <p>Ovozsiz phones</p>
+      </blockquote>
+      <figcaption class="blockquote-footer">
+        Someone famous in <cite title="Source Title">Source Title</cite>
+      </figcaption>
+    </figure>
+    <div class="row mx-auto p-1">
+        {% for good in projects %}
+           <div class="card mx-auto p-1 col-2 h-3" style="width: 18rem; ">
+               <img src="{{ good.project.image.url }}" class="card-img-top" alt="...">
+               <div class="card-body">
+                    <h5 class="card-title">{{ good.project.title }}</h5>description
+                    <p class="card-text">{{ projects.good.description | truncatechars:15 }}</p>
+                    <p class="card-text">Creator {{ good.project.creator.name  }}</p>
+                    <a href="#" class="btn btn-primary">More info</a>
+                </div>
+            </div>
+        {% endfor %}
         </div>
     </div>
     </div>
