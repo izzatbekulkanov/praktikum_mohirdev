@@ -43,7 +43,7 @@
                     <p class="card-text">{{ i.project.description | truncatechars:15 }}</p>
                     <p class="card-text">Creator {{ i.project.creator.name  }}</p>
 
-                    <a href="#" class="btn btn-primary">More info</a>
+                    <a href="{% url 'about' i.id %}" class="btn btn-primary">More info</a>
                   </div>
                 </div>
             {% endfor %}

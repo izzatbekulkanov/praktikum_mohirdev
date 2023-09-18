@@ -19,6 +19,5 @@ def about(request,id):
     project = Project.objects.get(id=id)
     context = {
         'project': project,
-        'tags': tags
     }
     return render(request, "news/about.html", context)
