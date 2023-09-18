@@ -58,11 +58,11 @@
     <div class="row mx-auto p-1">
         {% for good in projects %}
            <div class="card mx-auto p-1 col-2 h-3" style="width: 18rem; ">
-               <img src="{{ good.project.image.url }}" class="card-img-top" alt="...">
-               <div class="card-body">
-                    <h5 class="card-title">{{ good.project.title }}</h5>description
-                    <p class="card-text">{{ projects.good.description | truncatechars:15 }}</p>
-                    <p class="card-text">Creator {{ good.project.creator.name  }}</p>
+               <img src="{{ good.image.url }}" class="card-img-top pimage" alt="...">
+               <div class="card-body pbody">
+                    <h5 class="card-title">{{ good.title }}</h5>description
+                    <p class="card-text">{{ good.description | truncatechars:15 }}</p>
+                    <p class="card-text">Creator {{ project.creator.name  }}</p>
                     <a href="#" class="btn btn-primary">More info</a>
                 </div>
             </div>
@@ -70,5 +70,6 @@
         </div>
     </div>
     </div>
+</div>
 </div>
 {% endblock content %}
