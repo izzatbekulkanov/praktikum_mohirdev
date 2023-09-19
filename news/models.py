@@ -10,7 +10,7 @@ from django.utils.translation import gettext as _
 class Project(models.Model):
     title = models.CharField(_("Nomi"), max_length=200)
     description = models.TextField(_("Izoh"),)
-    image = models.ImageField(_("Rasm"), upload_to='images/', null=True, blank=True)
+    image = models.ImageField(_("Rasm"), upload_to='images/', null=True, blank=True, default='images/Apple.png')
     joined = models.DateTimeField(auto_now_add=True)
     id = models.UUIDField(unique=True, primary_key=True, default=uuid.uuid4, editable=False)
     creator = models.ForeignKey('Creator', on_delete=models.CASCADE, null=True, blank=True)
