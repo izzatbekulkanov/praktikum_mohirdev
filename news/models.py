@@ -26,14 +26,11 @@ class Review(models.Model):
         ("+", "yaxshi"),
         ("-", "yomon")
     )
-    body = models.CharField(max_length=200)
+    project = models.ForeignKey(Project, on_delete=models.CASCADE, null=True, blank=True, related_name = "project_review")
     value = models.CharField(max_length=50, choices=VOTE_TYPE)
     created = models.DateTimeField(auto_now_add=True)
     id = models.UUIDField(unique=True, primary_key=True, default=uuid.uuid4, editable=False)
-    project = models.ForeignKey(Project, on_delete=models.CASCADE, null=True, blank=True,
-    related_name = "project_review")
-
-
+    body = models.CharField(max_length=200)
     class Meta:
         verbose_name = 'Ball'
         verbose_name_plural = 'Ball'

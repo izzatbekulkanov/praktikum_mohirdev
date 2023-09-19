@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from news.models import *
+from .forms import AddAboutForm
 
 # Create your views here.
 
@@ -21,3 +22,18 @@ def about(request,id):
         'project': project,
     }
     return render(request, "news/about.html", context)
+
+
+def about_add(request):
+    if request.method == 'POST':
+        form = AddAboutForm(request.POST)
+        if form.is_valid():
+            form.save()
+            # Boshqa ma'lumotlarga yo'naltirish
+    else:
+        form = AddAboutForm()
+
+    context = {
+        'form': form,
+    }
+    return render(request, "news/about_add.html", context)

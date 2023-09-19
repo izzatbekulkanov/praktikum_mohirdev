@@ -1,0 +1,32 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+
+
+{% block content %}
+    <form method="POST" action="">
+        {% csrf_token %}
+
+            <table class="tableadd">
+                {% for for in form %}
+                <tr>
+                    <td>{{ for.label }}</td>
+                    <td style="width: 100%">{{ for }}</td>
+                </tr>
+                 <br>
+                {% endfor %}
+            </table>
+        <hr>
+
+
+        <input type="submit" value="Saqlash">
+        <input type="reset" value="Reset">
+        <input type="hidden" name="next" value="{{ next }}">
+        <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+        <input type="hidden" name="redirect_to" value="{{ redirect_to }}">
+
+    </form>
+
+
+{% endblock content %}
+
